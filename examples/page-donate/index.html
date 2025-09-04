@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/mn.css?hash=e56f0d7a820bc5ba" />
+    <title>Donation widget</title>
+  </head>
+  <body>
+
+    <div class="layoutRow fhaC fvaC hmin100vh pv50">
+      <div class="wmax w1024 ph15 mhA">
+        <div class="f28 tc">
+          Help us to keep Ubuntu free to download, share and use
+          by contributing to ...
+        </div>
+
+        <div id="donation-form"></div>
+
+      </div>
+    </div>
+
+    <script src="https://plugins.lunu.io/packages/widget-ui/omega.js"></script>
+
+    <script>
+    // Widget initialization
+    const widget = new window.Lunu.widgets.Donation(
+      document.getElementById('donation-form'), // Required parameter
+      {
+        endpoint: '/lunu-pay-donation/api.php',
+        version: 'alpha', // production server
+        min: 50,
+        max: 5000,
+        step: 50,
+        amount: 1000,
+      },
+    );
+
+    // widget.remove(); // remove widget
+    </script>
+  </body>
+</html>
